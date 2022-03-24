@@ -7,7 +7,7 @@ const IndexPage = () => {
 			<div id="top"></div>
 
 			
-			<a href="#" className="mobile-logo mobile-logo-light">
+			<a href="#home" className="mobile-logo mobile-logo-light">
 				<div className="overlay">
 					<div className="overlay-inner bg-dark opacity-50"></div>
 				</div>
