@@ -303,11 +303,12 @@ License: https://themeforest.net/licenses/standard
 
 		// Image
 		var $bgImage = $('.bg-image-holder');
+		console.log($bgImage);
 		if( $bgImage.length ) {
 			$bgImage.each(function(){
 				var src = $(this).children('img').attr('src');
 				var $self = $(this);
-
+console.log(src);
 				$self.css('background-image','url('+src+')').children('img').hide();
 			});
 		}

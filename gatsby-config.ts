@@ -33,6 +33,15 @@ const config: GatsbyConfig = {
       },
       __key: "images",
     },
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `settings`,
+        path: `./content/settings/`,
+      },
+    },
   ],
 };
 
