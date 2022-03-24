@@ -1,0 +1,43 @@
+{
+  "name": "my-portfolio-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "my-portfolio-site",
+  "author": "Chester Alan",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^2.0.6",
+    "gatsby": "^4.10.2",
+    "gatsby-plugin-google-analytics": "^4.10.0",
+    "gatsby-plugin-image": "^2.10.1",
+    "gatsby-plugin-manifest": "^4.10.2",
+    "gatsby-plugin-netlify-cms": "^6.10.0",
+    "gatsby-plugin-react-helmet": "^5.10.0",
+    "gatsby-plugin-sharp": "^4.10.2",
+    "gatsby-plugin-sitemap": "^5.10.2",
+    "gatsby-plugin-styled-components": "^5.10.0",
+    "gatsby-source-filesystem": "^4.10.1",
+    "gatsby-transformer-sharp": "^4.10.0",
+    "netlify-cms-app": "^2.15.69",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "@types/react": "^17.0.41",
+    "@types/react-dom": "^17.0.14",
+    "typescript": "^4.6.2"
+  }
+}
