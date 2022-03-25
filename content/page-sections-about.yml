@@ -1,0 +1,22 @@
+section_title: About Me
+display_name: Alchie Tagudin
+title: Frontend Web Developer
+photo: /uploads/tagudin.jpg
+description: I’m Alchie Tagudin a marketing specialist with over five years work
+  experience. Donec sed fringilla lectus, non vulputate orci. Integer id libero
+  euismod, interdum ligula vel, porttitor magna. Sed euismod maximus finibus.
+  Pellentesque tempus ultricies nisi at cursus. Nulla at nisi tellus.
+  Suspendisse potenti.
+education:
+  - course: MS Information Technology
+    school: University of Southeastern Philippines
+    started: "2019"
+    graduated: ""
+  - course: Computer Hardware Servicing NC II
+    school: PCT Davao - TESDA
+    started: "2009"
+  - course: BS Accountancy
+    school: Ateneo de Davao University
+    started: "2002"
+    graduated: "2007"
+awards: []

@@ -2,10 +2,24 @@ import React from 'react'
 import BackToTopButton from '../BackToTopButton/BackToTopButton'
 import GlobalCoverBg from '../GlobalCoverBg/GlobalCoverBg'
 import SiteNav from '../SiteNav/SiteNav'
+import { useStaticQuery, graphql } from 'gatsby'
 
 type Props = {}
 
 function Header({}: Props) {
+
+	const data = useStaticQuery(graphql`
+	query {
+		contentYaml(
+			fields: {fileName: {eq: "page-sections-cover"}, parentFolder: {eq: "content"}}
+		) {
+			display_name
+		}
+	  }
+	`);
+
+	const { display_name } = data.contentYaml;
+
   return (<>
 
 <div id="top"></div>
@@ -15,7 +29,7 @@ function Header({}: Props) {
     <div className="overlay">
         <div className="overlay-inner bg-dark opacity-50"></div>
     </div>
-    <span>Amanda Malat</span>
+    <span>{display_name}</span>
 </a>
 
 
@@ -33,8 +47,8 @@ function Header({}: Props) {
 					</div>
 					<div className="header-brand">
 						<a href="#" className="logo">
-							<span>Amanda Malat</span>
-							<span className="title-letter text-white opacity-15">A</span>
+							<span>{display_name}</span>
+							<span className="title-letter text-white opacity-15">{ display_name.charAt(0) }</span>
 						</a>
 					</div>
 					

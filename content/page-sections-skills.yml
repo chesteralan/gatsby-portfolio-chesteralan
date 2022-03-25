@@ -1,0 +1,23 @@
+section_title: Skills
+description: 2 Fusce massa dolor, mattis sed ultrices ut, placerat ut leo. Donec
+  sed fringilla lectus, non vulputate orci. Integer id libero euismod, interdum
+  ligula vel, porttitor magna. Sed euismod maximus finibus.
+skills:
+  - title: Social Media
+    sponsor: Social Media
+    year: Social Media
+    valuenow: "85"
+    valuemin: "0"
+    valuemax: "100"
+  - valuenow: "0"
+    valuemin: "0"
+    valuemax: "100"
+    title: Project Management
+  - valuenow: "0"
+    valuemin: "0"
+    valuemax: "100"
+    title: Analytical Knowledge
+  - valuenow: "0"
+    valuemin: "0"
+    valuemax: "100"
+    title: Creativity & Expression

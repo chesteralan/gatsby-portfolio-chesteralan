@@ -13,51 +13,105 @@ slug:
   sanitize_replacement: "-"
   
 collections:
-  - name: 'location'
-    label: 'Location'
-    folder: 'content/locations'
-    create: true
-    slug: '{{title}}'
-    media_folder: ''
-    public_folder: ''
-    editor:
-      preview: false
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string', required: true }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Thumbnail', name: 'thumbnail', widget: 'image', choose_url: true, required: true }
+  - label: "Page Sections"
+    name: "page-sections"
+    files:
+      - label: "Page Cover"
+        name: "page-sections-cover"
+        file: "content/page-sections-cover.yml"
+        fields:
+          - {label: Display Name, name: display_name, widget: string}
+          - {label: Title, name: title, widget: string}
+          - {label: Photo, name: photo, widget: image}
 
-  - name: 'category'
-    label: 'Category'
-    folder: 'content/categories'
-    create: true
-    slug: '{{title}}'
-    media_folder: ''
-    public_folder: ''
-    editor:
-      preview: false
-    fields:
-      - { label: 'Type', name: 'type', widget: 'select', required: true, options: ["travel", "eat", "stay", "study"] }
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string', required: true }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Thumbnail', name: 'thumbnail', widget: 'image', choose_url: true, required: true }
+      - label: "About Me"
+        name: "page-sections-about"
+        file: "content/page-sections-about.yml"
+        fields:
+          - {label: Section Title, name: section_title, widget: string}
+          - {label: Display Name, name: display_name, widget: string}
+          - {label: Title, name: title, widget: string}
+          - {label: Photo, name: photo, widget: image}
+          - {label: Description, name: description, widget: markdown}
+          - label: Education
+            name: education
+            widget: list
+            fields:
+              - {label: Course, name: course, widget: string}
+              - {label: School, name: school, widget: string}
+              - {label: Started, name: started, widget: string}
+              - {label: Graduated, name: graduated, widget: string, required: false}
+          - label: Awards
+            name: awards
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Sponsor, name: sponsor, widget: string}
+              - {label: Year, name: year, widget: string}
+
+      - label: "Skills"
+        name: "page-sections-skills"
+        file: "content/page-sections-skills.yml"
+        fields:
+          - {label: Section Title, name: section_title, widget: string}
+          - {label: Description, name: description, widget: string}
+          - label: Skills
+            name: skills
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: valuenow, name: valuenow, widget: string, default: "0"}
+              - {label: valuemin, name: valuemin, widget: string, default: "0"}
+              - {label: valuemax, name: valuemax, widget: string, default: "100"}
+
+      - label: "Experiences"
+        name: "page-sections-experiences"
+        file: "content/page-sections-experiences.yml"
+        fields:
+          - {label: Section Title, name: section_title, widget: string}
+          - {label: Title, name: title, widget: string}
+          - {label: Photo, name: photo, widget: image}
+
+      - label: "Services"
+        name: "page-sections-services"
+        file: "content/page-sections-services.yml"
+        fields:
+          - {label: Section Title, name: section_title, widget: string}
+          - {label: Title, name: title, widget: string}
+          - {label: Photo, name: photo, widget: image}
+
+      - label: "Portfolio"
+        name: "page-sections-portfolio"
+        file: "content/page-sections-portfolio.yml"
+        fields:
+          - {label: Section Title, name: section_title, widget: string}
+          - {label: Title, name: title, widget: string}
+          - {label: Photo, name: photo, widget: image}
+
+      - label: "Testimonials"
+        name: "page-sections-testimonials"
+        file: "content/page-sections-testimonials.yml"
+        fields:
+          - {label: Section Title, name: section_title, widget: string}
+          - {label: Title, name: title, widget: string}
+          - {label: Photo, name: photo, widget: image}
+
+      - label: "Contacts"
+        name: "page-sections-contacts"
+        file: "content/page-sections-contacts.yml"
+        fields:
+          - {label: Section Title, name: section_title, widget: string}
+          - {label: Description, name: description, widget: string}
+          - {label: Phone Number, name: phone_number, widget: string}
+          - {label: Address, name: address, widget: string}
+          - {label: Email Address, name: email_address, widget: string}
 
   - label: "Settings"
     name: "settings"
     files:
-      - label: "Profile"
-        name: "profile"
-        file: "content/settings/profile.yml"
-        fields:
-          - {label: Display Name, name: displayname, widget: string}
-          - {label: Title, name: title, widget: string}
       - label: "Social Media"
         name: "social-media"
-        file: "content/settings/social-media.yml"
+        file: "content/social-media-accounts.yml"
         fields:
           - label: Links
             name: links
