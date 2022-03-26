@@ -1,9 +1,21 @@
 import React from 'react'
-
+import { useStaticQuery, graphql } from 'gatsby'
 type Props = {}
 
 const Footer = ({}: Props) => {
 	
+	const data = useStaticQuery(graphql`
+	query {
+		contentYaml(
+			fields: {fileName: {eq: "page-sections-cover"}, parentFolder: {eq: "content"}}
+		) {
+			display_name
+		}
+	  }
+	`);
+
+	const { display_name } = data.contentYaml;
+
   return (
     <footer className="site-footer bg-light">
 						<div className="container">
@@ -31,7 +43,7 @@ const Footer = ({}: Props) => {
 									</li>
 								</ul>
 							</nav>
-							<p className="text-center">&copy; {new Date().getFullYear()} Malat - All Rights Reserved</p>
+							<p className="text-center">&copy; {new Date().getFullYear()} {display_name} - All Rights Reserved</p>
 						</div>
 					</footer>
   )

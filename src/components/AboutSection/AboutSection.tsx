@@ -52,7 +52,7 @@ function AboutSection({}: Props) {
 											{education.length > 0 && <h4 className="mb-4">Education</h4>}
 											{education.map(({ course, school, started, graduated }: { course: string, school: string, started: string, graduated: string }, index: number) => <div key={index} className="mb-3">
 												<p className="h5">{course}</p>
-												<p>{school}, {started} {graduated !== "" ? `- ${graduated}` : ""}</p>
+												<p>{school}, {started} {(graduated !== "" && graduated) ? `- ${graduated}` : ""}</p>
 											</div>)}
 											
 										</div>

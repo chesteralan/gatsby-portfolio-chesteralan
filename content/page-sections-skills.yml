@@ -9,15 +9,15 @@ skills:
     valuenow: "85"
     valuemin: "0"
     valuemax: "100"
-  - valuenow: "0"
+  - valuenow: "55"
     valuemin: "0"
     valuemax: "100"
     title: Project Management
-  - valuenow: "0"
+  - valuenow: "70"
     valuemin: "0"
     valuemax: "100"
     title: Analytical Knowledge
-  - valuenow: "0"
+  - valuenow: "90"
     valuemin: "0"
     valuemax: "100"
     title: Creativity & Expression

@@ -21,3 +21,29 @@ links:
     url: "#facebook"
   - name: Twitter
     url: "#twitter"
+experiences:
+  - position: Frontend Web Developer
+    company: PetLab Co.
+    started: June 2020
+    ended: June 2020
+    duration: none
+    description: none
+skills:
+  - title: Social Media
+    sponsor: Social Media
+    year: Social Media
+    valuenow: "85"
+    valuemin: "0"
+    valuemax: "100"
+  - valuenow: "55"
+    valuemin: "0"
+    valuemax: "100"
+    title: Project Management
+  - valuenow: "70"
+    valuemin: "0"
+    valuemax: "100"
+    title: Analytical Knowledge
+  - valuenow: "90"
+    valuemin: "0"
+    valuemax: "100"
+    title: Creativity & Expression

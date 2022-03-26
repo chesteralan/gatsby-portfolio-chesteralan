@@ -1,23 +1,47 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
 type Props = {}
+type Category = {
+	key: string,
+	title: string
+}
 
 function PortfolioSection({}: Props) {
+
+	const data = useStaticQuery(graphql`
+	query {
+		contentYaml(
+			fields: {fileName: {eq: "page-sections-portfolio"}, parentFolder: {eq: "content"}}
+		) {
+			section_title
+			categories {
+				key
+				title
+			}
+		}
+	  }
+	`);
+
+	const { section_title, categories } = data.contentYaml;
+
   return (
     <section id="portfolio">
 						<div className="container">
 							<div className="row mb-8">
 								<div className="col-lg-10 col-xl-8 mx-lg-auto text-center">
 									<div className="section-title h2 mb-3">
-										<h2 className="mb-0">Portfolio</h2>
-										<span className="title-letter">P</span>
+										<h2 className="mb-0">{section_title}</h2>
+										<span className="title-letter">{section_title.charAt(0)}</span>
 									</div>
 									<nav className="portfolio-filter isotope-filter">
 										<ul className="justify-content-center">
 											<li><a href="#" className="active" data-filter="*">All</a></li>
-											<li><a href="#" data-filter=".web">Web</a></li>
-											<li><a href="#" data-filter=".brand">Brand</a></li>
-											<li><a href="#" data-filter=".design">Design</a></li>
+											{categories.map(({key,title}:Category) => (
+												<li key={key}>
+													<a href="#" data-filter={`.${key}`}>{title}</a>
+												</li>
+											))}
 										</ul>
 									</nav>
 								</div>

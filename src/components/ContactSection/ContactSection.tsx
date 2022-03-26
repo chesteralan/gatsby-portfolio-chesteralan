@@ -1,8 +1,26 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
 type Props = {}
 
 const ContactSection = ({}: Props) => {
+
+    const data = useStaticQuery(graphql`
+	query {
+		contentYaml(
+			fields: {fileName: {eq: "page-sections-contacts"}, parentFolder: {eq: "content"}}
+		) {
+			section_title
+			description
+            phone_number
+            address
+            email_address
+		}
+	  }
+	`);
+
+	const { section_title, description, phone_number, address, email_address } = data.contentYaml;
+
   return (
     <section id="contact">
     <div className="container">
@@ -11,10 +29,10 @@ const ContactSection = ({}: Props) => {
                 <div className="row mb-8">
                     <div className="col-lg-8 mx-lg-auto text-center">
                         <div className="section-title h2 mb-3">
-                            <h2 className="mb-0">Contact</h2>
-                            <span className="title-letter">C</span>
+                            <h2 className="mb-0">{section_title}</h2>
+                            <span className="title-letter">{section_title.charAt(0)}</span>
                         </div>
-                        <p>Want to say hello? Want to know more about me? Give me a call or drop me an email and I will get back to you as soon as I can.</p>
+                        <p>{description}</p>
                     </div>
                 </div>
                 <div className="row mb-8">
@@ -25,8 +43,7 @@ const ContactSection = ({}: Props) => {
                                     <i className="ti-mobile"></i>
                                 </div>
                             </div>
-                            <p className="text-center">(0091) 1111 1234567<br/>
-                            (084) 2222 1234567</p>
+                            <p className="text-center">{phone_number}</p>
                         </div>
                     </div>
 
@@ -37,8 +54,7 @@ const ContactSection = ({}: Props) => {
                                     <i className="ti-location-pin"></i>
                                 </div>
                             </div>
-                            <p className="text-center">69 Halsey St, New York, Ny 10002,<br/>
-                            United States</p>
+                            <p className="text-center">{address}</p>
                         </div>
                     </div>
 
@@ -49,8 +65,7 @@ const ContactSection = ({}: Props) => {
                                     <i className="ti-email"></i>
                                 </div>
                             </div>
-                            <p className="text-center"><a href="mailto:support@example.com" className="text-dark">support@example.com</a><br/>
-                            <a href="mailto:hello@example.com" className="text-dark">hello@example.com</a></p>
+                            <p className="text-center"><a href={`mailto:${email_address}`} className="text-dark">{email_address}</a></p>
                         </div>
                     </div>
                 </div>

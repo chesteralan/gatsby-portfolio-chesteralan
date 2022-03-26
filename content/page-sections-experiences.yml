@@ -1,0 +1,15 @@
+section_title: Experiences
+description: Experiences
+experiences:
+  - position: Frontend Web Developer
+    company: PetLab Co.
+    started: June 2020
+    ended: June 2020
+    duration: 1 month
+    description: test
+  - position: Accountant
+    company: Archdiocesan Nourishment Center
+    started: July 2018
+    ended: July 2020
+    duration: 2 years
+    description: Bookkeeper
