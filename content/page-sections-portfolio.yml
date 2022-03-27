@@ -7,3 +7,18 @@ categories:
     title: Brand
   - key: design
     title: Design
+portfolios:
+  - category: web
+    title: Ants Design Studio
+    url: https://www.antsdesignsstudio.com/
+    photo: /uploads/antsdesignsstudio.png
+    description: Ants Design Studio is the portfolio website of my cousin who is a
+      Graphics Designer. A free web template with a minimalist design called
+      BizLand is chosen because he wanted it to be simple.
+  - category: web
+    title: Archdiocesan Nourishment Center
+    url: https://www.ancdavao.com/
+    photo: /uploads/antsdesignsstudio.png
+    description: Ants Design Studio is the portfolio website of my cousin who is a
+      Graphics Designer. A free web template with a minimalist design called
+      BizLand is chosen because he wanted it to be simple.

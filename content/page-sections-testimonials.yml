@@ -1,0 +1,12 @@
+section_title: Testimonials
+description: Testimonials
+background_image: /uploads/image-1.jpeg
+testimonials:
+  - name: Joanna Klein
+    company: Journey To Legacy, LLC
+    quote: Thank you!
+    photo: /uploads/tagudin-square.jpg
+  - name: Joanna Klein
+    company: Journey To Legacy, LLC
+    quote: Thank you!
+    photo: /uploads/tagudin-square.jpg

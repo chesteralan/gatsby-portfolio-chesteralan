@@ -4,6 +4,9 @@ Gatsby portfolio site for chesteralan.com using Malat template
 ## Malat - Bootstrap Personal Resume Template
 https://elements.envato.com/malat-bootstrap-personal-resume-template-QTC9EPY
 
+## ENV
+GATSBY_GTAG_ID=
+
 ## Gatsby Instructions
 <p align="center">
   <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">

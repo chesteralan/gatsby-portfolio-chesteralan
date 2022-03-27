@@ -1,3 +1,10 @@
+[dev]
+  command = "yarn start"
+  targetPort = 8000
+  port = 9999
+  publish = "public"
+  functionsPort = 7000
+
 [[headers]]
   for = "/*"
   [headers.values]

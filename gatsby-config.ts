@@ -1,3 +1,4 @@
+require("dotenv").config()
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
@@ -11,7 +12,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "12345",
+        trackingId: process.env.GATSBY_GTAG_ID,
       },
     },
     "gatsby-plugin-image",
@@ -40,6 +41,13 @@ const config: GatsbyConfig = {
       options: {
         name: `content`,
         path: `./content/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `./content/blog/`,
       },
     },
   ],

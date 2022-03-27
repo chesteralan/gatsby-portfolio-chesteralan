@@ -1,18 +1,25 @@
 import React from 'react'
-import styled from 'styled-components';
+import { useStaticQuery, graphql } from 'gatsby'
 
 type Props = {}
 
-const GlobalBg = styled.div`
-    background-image: url(/images/image-1.jpeg);
-`;
-
 function GlobalCoverBg({}: Props) {
+
+  const data = useStaticQuery(graphql`
+	query {
+		contentYaml(
+			fields: {fileName: {eq: "page-sections-cover"}, parentFolder: {eq: "content"}}
+		) {
+		  background_image
+		}
+	  }
+	`);
+
+	const { background_image } = data.contentYaml;
+  
   return (
     <div className="global-cover-bg">
-				<GlobalBg className="overlay-inner bg-cover">
-					<img src="/images/image-1.jpeg" alt="background" />
-				</GlobalBg>
+				<div className="overlay-inner bg-cover" style={{ backgroundImage: `url(${background_image || "/images/image-1.jpeg"})`}} />
 			</div>
   )
 }

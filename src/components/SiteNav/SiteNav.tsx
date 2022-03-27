@@ -13,13 +13,16 @@ function SiteNav({}: Props) {
 								<a href="#about" className="scrollto">About</a>
 							</li>
 							<li>
-								<a href="#services" className="scrollto">Services</a>
+								<a href="#services" className="scrollto">Technologies</a>
 							</li>
 							<li>
 								<a href="#portfolio" className="scrollto">Portfolio</a>
 							</li>
 							<li>
-								<a href="#news" className="scrollto">News</a>
+								<a href="#testimonials" className="scrollto">Testimonials</a>
+							</li>
+							<li>
+								<a href="#blog" className="scrollto">Blog</a>
 							</li>
 							<li>
 								<a href="#contact" className="scrollto">Contact</a>
