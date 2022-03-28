@@ -12,20 +12,17 @@ import ExperienceSection from '../components/ExperienceSection/ExperienceSection
 import SkillsSection from '../components/SkillsSection/SkillsSection'
 
 import {Helmet} from "react-helmet";
-import { useStaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
-const IndexPage = () => {
-
-	const data = useStaticQuery(graphql`
-	query {
-		contentYaml(
-			fields: {fileName: {eq: "page-sections-cover"}, parentFolder: {eq: "content"}}
-		) {
-		  title
-		  display_name
+type Props = {
+	data: { 
+		contentYaml: {
+			display_name: string,
+			title: string,
 		}
-	  }
-	`);
+	}
+}
+const IndexPage = ( { data }: Props) => {
 
 	const { display_name, title } = data.contentYaml;
 
@@ -68,3 +65,14 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const query = graphql`
+	query {
+		contentYaml(
+			fields: {fileName: {eq: "page-sections-cover"}, parentFolder: {eq: "content"}}
+		) {
+		  title
+		  display_name
+		}
+	  }
+	`

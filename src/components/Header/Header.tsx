@@ -1,80 +1,80 @@
-import React from 'react'
-import BackToTopButton from '../BackToTopButton/BackToTopButton'
-import GlobalCoverBg from '../GlobalCoverBg/GlobalCoverBg'
-import SiteNav from '../SiteNav/SiteNav'
-import { useStaticQuery, graphql } from 'gatsby'
-import SocialMediaIcons from '../SocialMediaIcons/SocialMediaIcons'
+import React from "react";
+import GlobalCoverBg from "../GlobalCoverBg/GlobalCoverBg";
+import SiteNav from "../SiteNav/SiteNav";
+import { useStaticQuery, graphql, Link } from "gatsby";
+import SocialMediaIcons from "../SocialMediaIcons/SocialMediaIcons";
 
-type Props = {}
+type Props = {};
 
 function Header({}: Props) {
+  const data = useStaticQuery(graphql`
+    query {
+      contentYaml(
+        fields: {
+          fileName: { eq: "page-sections-cover" }
+          parentFolder: { eq: "content" }
+        }
+      ) {
+        display_name
+      }
+    }
+  `);
 
-	const data = useStaticQuery(graphql`
-	query {
-		contentYaml(
-			fields: {fileName: {eq: "page-sections-cover"}, parentFolder: {eq: "content"}}
-		) {
-			display_name
-		}
+  const { display_name } = data.contentYaml;
 
-	  }
-	`);
+  return (
+    <>
+      <div id="top"></div>
 
-	const { display_name } = data.contentYaml;
+      <a href="#home" className="mobile-logo mobile-logo-light">
+        <div className="overlay">
+          <div className="overlay-inner bg-dark opacity-50"></div>
+        </div>
+        <span>{display_name}</span>
+      </a>
 
+      <button
+        type="button"
+        id="navigation-toggle"
+        className="nav-toggle nav-toggle-light"
+      >
+        <div className="overlay">
+          <div className="overlay-inner bg-dark opacity-50"></div>
+        </div>
+        <span></span>
+      </button>
 
-  return (<>
+      <header className="site-header bg-transparent">
+        <div className="header-inner">
+          <div className="overlay">
+            <div className="overlay-inner bg-dark opacity-85"></div>
+          </div>
+          <div className="header-brand">
+            <Link to="/" className="logo">
+              <span>{display_name}</span>
+              <span className="title-letter text-white opacity-15">
+                {display_name.charAt(0)}
+              </span>
+            </Link>
+          </div>
 
-<div id="top"></div>
+          <div className="nav-divider mb-8"></div>
 
-			
-<a href="#home" className="mobile-logo mobile-logo-light">
-    <div className="overlay">
-        <div className="overlay-inner bg-dark opacity-50"></div>
-    </div>
-    <span>{display_name}</span>
-</a>
+          <SiteNav />
 
+          <div className="nav-divider my-8"></div>
 
-<button type="button" id="navigation-toggle" className="nav-toggle nav-toggle-light">
-    <div className="overlay">
-        <div className="overlay-inner bg-dark opacity-50"></div>
-    </div>
-    <span></span>
-</button>
+          <SocialMediaIcons />
+        </div>
+      </header>
 
-    <header className="site-header bg-transparent">
-				<div className="header-inner">
-					<div className="overlay">
-						<div className="overlay-inner bg-dark opacity-85"></div>
-					</div>
-					<div className="header-brand">
-						<a href="#" className="logo">
-							<span>{display_name}</span>
-							<span className="title-letter text-white opacity-15">{ display_name.charAt(0) }</span>
-						</a>
-					</div>
-					
-					<div className="nav-divider mb-8"></div>
-					
-					<SiteNav />
+      <div className="header-overlay">
+        <div className="overlay-inner bg-dark opacity-80"></div>
+      </div>
 
-					<div className="nav-divider my-8"></div>
-					
-					<SocialMediaIcons />
-					
-				</div>
-			</header>
-
-            <div className="header-overlay">
-				<div className="overlay-inner bg-dark opacity-80"></div>
-			</div>
-
-			<BackToTopButton />
-
-			<GlobalCoverBg />
-
-  </> )
+      <GlobalCoverBg />
+    </>
+  );
 }
 
-export default Header
+export default Header;

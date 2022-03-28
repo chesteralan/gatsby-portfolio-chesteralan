@@ -11,6 +11,7 @@ const ContactSection = ({}: Props) => {
 		contentYaml(
 			fields: {fileName: {eq: "page-sections-contacts"}, parentFolder: {eq: "content"}}
 		) {
+            enabled
 			section_title
 			description
             phone_number
@@ -20,7 +21,9 @@ const ContactSection = ({}: Props) => {
 	  }
 	`);
 
-	const { section_title, description, phone_number, address, email_address } = data.contentYaml;
+	const { enabled, section_title, description, phone_number, address, email_address } = data.contentYaml;
+    
+      if( !enabled ) return <></>;
 
   return (
     <section id="contact">

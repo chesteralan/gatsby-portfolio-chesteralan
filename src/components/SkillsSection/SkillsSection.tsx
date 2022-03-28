@@ -17,6 +17,7 @@ function SkillsSection({}: Props) {
 		contentYaml(
 			fields: {fileName: {eq: "page-sections-skills"}, parentFolder: {eq: "content"}}
 		) {
+			enabled
 			section_title
 			description
 			skills {
@@ -29,7 +30,9 @@ function SkillsSection({}: Props) {
 	  }
 	`);
 
-	const { section_title, description, skills } = data.contentYaml;
+	const { enabled, section_title, description, skills } = data.contentYaml;
+	
+  if( !enabled ) return <></>;
 
   return (
     <section id="skills" className="bg-light">

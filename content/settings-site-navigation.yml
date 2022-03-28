@@ -1,0 +1,11 @@
+navigation:
+  - title: About
+    url: /#about
+  - title: Experiences
+    url: /#experiences
+  - title: Portfolio
+    url: /#portfolio
+  - title: Blog
+    url: /#blog
+  - title: Contact
+    url: /#contact

@@ -15,6 +15,7 @@ function ServicesSection({}: Props) {
 		contentYaml(
 			fields: {fileName: {eq: "page-sections-services"}, parentFolder: {eq: "content"}}
 		) {
+			enabled
 			section_title
 			description
 			services {
@@ -26,8 +27,10 @@ function ServicesSection({}: Props) {
 	  }
 	`);
 
-	const { section_title, description, services } = data.contentYaml;
+	const { enabled, section_title, description, services } = data.contentYaml;
 
+	if( !enabled ) return <></>;
+	
   return (
     <section id="services" className="pb-0">
 						<div className="container">

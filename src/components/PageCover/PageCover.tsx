@@ -10,6 +10,7 @@ function PageCover({}: Props) {
 		contentYaml(
 			fields: {fileName: {eq: "page-sections-cover"}, parentFolder: {eq: "content"}}
 		) {
+		  enabled
 		  title
 		  display_name
 		  photo
@@ -17,7 +18,9 @@ function PageCover({}: Props) {
 	  }
 	`);
 
-	const { display_name, title, photo } = data.contentYaml;
+	const { enabled, display_name, title, photo } = data.contentYaml;
+
+  if( !enabled ) return <></>;
 
   return (
     <div id="page-cover" className="page-cover">

@@ -12,3 +12,42 @@
     border-top: none;
     padding-top: 0px;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+ .slide-up-now {
+    animation: slide-up .6s cubic-bezier(0.4, 0, 0.2, 1) 500ms;
+  }
+  .slide-up-now-fixed { /* preferred method */
+    animation: slide-up .6s cubic-bezier(0.4, 0, 0.2, 1) 500ms backwards;
+  }
+  .slide-up-now-fixed-initial-prop {
+    transform: translateY(100%);
+    animation: slide-up .6s cubic-bezier(0.4, 0, 0.2, 1) 500ms forwards;
+  }
+  .slide-up-now-opacity {
+    opacity: 0;
+    animation: slide-up-opacity .6s cubic-bezier(0.4, 0, 0.2, 1) 200ms forwards;
+  }
+  
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slide-up-opacity {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  } 

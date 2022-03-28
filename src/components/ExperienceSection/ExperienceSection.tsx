@@ -18,6 +18,7 @@ function ExperienceSection({}: Props) {
 		contentYaml(
 			fields: {fileName: {eq: "page-sections-experiences"}, parentFolder: {eq: "content"}}
 		) {
+			enabled
 			section_title
 			experiences {
 				position
@@ -31,10 +32,12 @@ function ExperienceSection({}: Props) {
 	  }
 	`);
 
-	const { section_title, experiences } = data.contentYaml;
-
+	const { enabled, section_title, experiences } = data.contentYaml;
+  
+	if( !enabled ) return <></>;
+	
   return (
-    <section id="experience" className="pb-0">
+    <section id="experiences" className="pb-0">
 						<div className="container">
 							<div className="section-title h2 text-center mb-8">
 								<h2 className="mb-0">{section_title}</h2>
@@ -44,12 +47,13 @@ function ExperienceSection({}: Props) {
 							<div className="experiences">
 							{experiences.map(({position,company,started,ended,duration,description}: Experiences, index: number) => 
 								<div key={index.toString()} className="row">
-									<div className="col-lg-4 mb-1 mb-lg-0">
+									<div className="col-lg-5 mb-1 mb-lg-0">
 										<p className="h5 mb-0">{position}</p>
-										<p className="opacity-75">{company}, {started} {(ended !== "" && ended) ? `- ${ended}` : ""}
-										{duration && <><br />{duration}</>}</p>
+										<p className="opacity-75">{company}
+										<br />{started} {(ended !== "" && ended) ? `- ${ended}` : ""}
+										{duration && <> ({duration})</>}</p>
 									</div>
-									<div className="col-lg-8" dangerouslySetInnerHTML={{ __html: description }}>
+									<div className="col-lg-7" dangerouslySetInnerHTML={{ __html: description }}>
 										
 									</div>
 									

@@ -1,7 +1,9 @@
+enabled: false
 section_title: About Me 2
 display_name: Alchie Tagudin
 title: Frontend Web Developer
 photo: /uploads/tagudin.jpg
+cv_link: 
 description: I’m Alchie Tagudin a marketing specialist with over five years work
   experience. Donec sed fringilla lectus, non vulputate orci. Integer id libero
   euismod, interdum ligula vel, porttitor magna. Sed euismod maximus finibus.

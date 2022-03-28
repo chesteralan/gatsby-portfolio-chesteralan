@@ -25,6 +25,13 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Thumbnail', name: 'thumbnail', widget: 'image', choose_url: true, required: true }
       - { label: 'Tags', name: 'tags', widget: 'list', allow_add: true, default: ["article"] }
+      - label: "Category"
+        name: "category"
+        widget: "relation"
+        collection: "settings"
+        search_fields: ["categories.*.name"]
+        display_fields: ["categories.*.name"]
+        value_field: "categories.*.name"
 
   - label: "Page Sections"
     name: "page-sections"
@@ -33,6 +40,7 @@ collections:
         name: "page-sections-cover"
         file: "content/page-sections-cover.yml"
         fields:
+          - {label: Enabled, name: enabled, widget: boolean, default: true}
           - {label: Display Name, name: display_name, widget: string}
           - {label: Title, name: title, widget: string}
           - {label: Photo, name: photo, widget: image}
@@ -42,9 +50,11 @@ collections:
         name: "page-sections-about"
         file: "content/page-sections-about.yml"
         fields:
+          - {label: Enabled, name: enabled, widget: boolean, default: true}
           - {label: Section Title, name: section_title, widget: string}
           - {label: Display Name, name: display_name, widget: string}
           - {label: Title, name: title, widget: string}
+          - {label: Download CV Link, name: cv_link, widget: string, required: false}
           - {label: Photo, name: photo, widget: image}
           - {label: Description, name: description, widget: markdown}
           - label: Education
@@ -68,6 +78,7 @@ collections:
         name: "page-sections-skills"
         file: "content/page-sections-skills.yml"
         fields:
+          - {label: Enabled, name: enabled, widget: boolean, default: true}
           - {label: Section Title, name: section_title, widget: string}
           - {label: Description, name: description, widget: string}
           - label: Skills
@@ -84,6 +95,7 @@ collections:
         name: "page-sections-experiences"
         file: "content/page-sections-experiences.yml"
         fields:
+          - {label: Enabled, name: enabled, widget: boolean, default: true}
           - {label: Section Title, name: section_title, widget: string}
           - {label: Description, name: description, widget: string}
           - label: Experiences
@@ -102,6 +114,7 @@ collections:
         name: "page-sections-services"
         file: "content/page-sections-services.yml"
         fields:
+          - {label: Enabled, name: enabled, widget: boolean, default: true}
           - {label: Section Title, name: section_title, widget: string}
           - {label: Description, name: description, widget: string}
           - label: Services
@@ -117,6 +130,7 @@ collections:
         name: "page-sections-portfolio"
         file: "content/page-sections-portfolio.yml"
         fields:
+          - {label: Enabled, name: enabled, widget: boolean, default: true}
           - {label: Section Title, name: section_title, widget: string}
           - {label: Description, name: description, widget: string}
           - label: Categories
@@ -147,6 +161,7 @@ collections:
         name: "page-sections-testimonials"
         file: "content/page-sections-testimonials.yml"
         fields:
+          - {label: Enabled, name: enabled, widget: boolean, default: true}
           - {label: Section Title, name: section_title, widget: string}
           - {label: Description, name: description, widget: string}
           - {label: Background Image, name: background_image, widget: image}
@@ -164,6 +179,7 @@ collections:
         name: "page-sections-blog"
         file: "content/page-sections-blog.yml"
         fields:
+          - {label: Enabled, name: enabled, widget: boolean, default: true}
           - {label: Section Title, name: section_title, widget: string}
           - {label: Description, name: description, widget: string}
 
@@ -171,6 +187,7 @@ collections:
         name: "page-sections-contacts"
         file: "content/page-sections-contacts.yml"
         fields:
+          - {label: Enabled, name: enabled, widget: boolean, default: true}
           - {label: Section Title, name: section_title, widget: string}
           - {label: Description, name: description, widget: string}
           - {label: Phone Number, name: phone_number, widget: string}
@@ -180,6 +197,27 @@ collections:
   - label: "Settings"
     name: "settings"
     files:
+      - label: "Site Navigation"
+        name: "site-navigation"
+        file: "content/settings-site-navigation.yml"
+        fields:
+          - label: Navigation
+            name: navigation
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: URL, name: url, widget: string}
+
+      - label: "Blog Categories"
+        name: "blog-categories"
+        file: "content/settings-blog-categories.yml"
+        fields:
+          - label: Categories
+            name: categories
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+
       - label: "Social Media"
         name: "social-media"
         file: "content/settings-social-media.yml"
@@ -195,4 +233,5 @@ collections:
               - {label: Name, name: name, widget: string}
               - {label: URL, name: url, widget: string}
               - {label: Icon, name: icon, widget: string}
+
     

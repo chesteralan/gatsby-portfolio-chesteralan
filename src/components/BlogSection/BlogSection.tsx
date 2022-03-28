@@ -25,6 +25,7 @@ function BlogSection({}: Props) {
           parentFolder: { eq: "content" }
         }
       ) {
+        enabled
         section_title
       }
 
@@ -44,9 +45,11 @@ function BlogSection({}: Props) {
     }
   `);
 
-  const { section_title } = data.contentYaml;
+  const { enabled, section_title } = data.contentYaml;
   const { nodes: articles } = data.allMarkdownRemark;
 
+  if( !enabled ) return <></>;
+  
   return (
     <section id="blog" className="pb-0">
       <div className="container">

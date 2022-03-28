@@ -36,6 +36,7 @@ const config: GatsbyConfig = {
     },
     `gatsby-transformer-remark`,
     `gatsby-transformer-yaml`,
+    
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -15,6 +15,7 @@ function TestimonialsSection({}: Props) {
 		contentYaml(
 			fields: {fileName: {eq: "page-sections-testimonials"}, parentFolder: {eq: "content"}}
 		) {
+			enabled
 			background_image
 			testimonials {
 				name
@@ -26,7 +27,9 @@ function TestimonialsSection({}: Props) {
 	  }
 	`);
 
-	const { background_image, testimonials } = data.contentYaml;
+	const { enabled, background_image, testimonials } = data.contentYaml;
+
+	if( !enabled ) return <></>;
 
   return (
     <section id="testimonials">

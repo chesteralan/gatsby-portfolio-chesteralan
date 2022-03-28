@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import sendMessage from '../../utils/sendMessage'
+import * as S from './ContactForm.styles'
 
 type Props = {}
 
@@ -7,27 +8,8 @@ function ContactForm({}: Props) {
 
     const [inputData, setInputData] = useState({ name: "", email: "", subject: "", message: "" });
     const [errorMessage, setErrorMessage] = useState("");
+    const [sending, setSending] = useState(false);
     const [sent, setSent] = useState(false);
-
-    const handleSubmit = (evt:any) => {
-        evt.preventDefault();
-        
-        setErrorMessage("");
-
-        if( !inputData["name"] || inputData["name"].length === 0 ) {
-            return setErrorMessage("Name is required!");
-        }
-        if( !inputData["email"] || inputData["email"].length === 0 ) {
-            return setErrorMessage("Email is required!");
-        }
-        if( !inputData["message"] || inputData["message"].length === 0 ) {
-            return setErrorMessage("Message is required!");
-        }
-
-        sendMessage(inputData).then(() => {
-            setSent(true);
-        });
-    }
 
     const handleInput = (evt:any) => {
         evt.preventDefault();
@@ -38,14 +20,46 @@ function ContactForm({}: Props) {
         })
     }
 
+    const handleSubmit = (evt:any) => {
+        evt.preventDefault();
+        
+        if( sending ) {
+            return;
+        }
+
+        setErrorMessage("");
+
+        if( !inputData["name"] || inputData["name"].length === 0 ) {
+            return setErrorMessage("Name is required!");
+        }
+        if( !inputData["email"] || inputData["email"].length === 0 ) {
+            return setErrorMessage("Email is required!");
+        }
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(inputData["email"]) === false ) {
+            return setErrorMessage("Email is not valid!");
+        }
+        if( !inputData["message"] || inputData["message"].length === 0 ) {
+            return setErrorMessage("Message is required!");
+        }
+
+        setSending(true);
+        sendMessage(inputData).then(() => {
+            setSent(true);
+            setSending(false);
+        });
+    }
+
+
 
 const Sent = () => <div className="alert alert-success">Message sent successfully!</div>
 
-  return sent ? <Sent /> : (<div className="contact-form">
+  return sent ? <Sent /> : (<S.Form className="contact-form">
+      {sending && <S.FormCover />}
   <form className="mb-0" id="cf" name="cf" method="post" autoComplete="off" onSubmit={handleSubmit}>
+  {errorMessage !== "" && <p className="alert alert-danger alert-md"><strong>ERROR:</strong> {errorMessage}</p>}
       <div className="form-row">
-          <div className="form-process"></div>
-
+          <div className="form-process">
+          </div>
           <div className="col-12 col-md-6">
               <div className="form-group error-text-white">
                   <input required onChange={handleInput} type="text" id="cf-name" name="name" placeholder="Enter your name" className="form-control required" />
@@ -71,13 +85,12 @@ const Sent = () => <div className="alert alert-success">Message sent successfull
           </div>
 
           <div className="col-12 text-center">
-              {errorMessage !== "" && <p className="alert alert-danger alert-md">{errorMessage}</p>}
               <button onClick={handleSubmit} className="btn btn-primary" type="submit" id="cf-submit" name="cf-submit">Send Message</button>
           </div>
       </div>
   </form>
   <div className="contact-form-result text-center"></div>
-</div>)
+</S.Form>)
 }
 
 export default ContactForm

@@ -1,21 +1,50 @@
+enabled: true
 section_title: Portfolio
 description: Portfolio
 categories:
-  - key: web
-    title: Web
-  - key: brand
-    title: Brand
-  - key: design
-    title: Design
+  - key: gatsbyjs
+    title: Gatsby.Js
+  - key: vuejs
+    title: Vue.Js
+  - key: tools
+    title: Tools
 portfolios:
-  - category: web
+  - category: gatsbyjs
     title: Ants Design Studio
     url: https://www.antsdesignsstudio.com/
     photo: /uploads/antsdesignsstudio.png
     description: Ants Design Studio is the portfolio website of my cousin who is a
       Graphics Designer. A free web template with a minimalist design called
       BizLand is chosen because he wanted it to be simple.
-  - category: web
+  - category: vuejs
+    title: Archdiocesan Nourishment Center
+    url: https://www.ancdavao.com/
+    photo: /uploads/antsdesignsstudio.png
+    description: Ants Design Studio is the portfolio website of my cousin who is a
+      Graphics Designer. A free web template with a minimalist design called
+      BizLand is chosen because he wanted it to be simple.
+  - category: gatsbyjs
+    title: Archdiocesan Nourishment Center
+    url: https://www.ancdavao.com/
+    photo: /uploads/antsdesignsstudio.png
+    description: Ants Design Studio is the portfolio website of my cousin who is a
+      Graphics Designer. A free web template with a minimalist design called
+      BizLand is chosen because he wanted it to be simple.
+  - category: vuejs
+    title: Archdiocesan Nourishment Center
+    url: https://www.ancdavao.com/
+    photo: /uploads/antsdesignsstudio.png
+    description: Ants Design Studio is the portfolio website of my cousin who is a
+      Graphics Designer. A free web template with a minimalist design called
+      BizLand is chosen because he wanted it to be simple.
+  - category: tools
+    title: Archdiocesan Nourishment Center
+    url: https://www.ancdavao.com/
+    photo: /uploads/antsdesignsstudio.png
+    description: Ants Design Studio is the portfolio website of my cousin who is a
+      Graphics Designer. A free web template with a minimalist design called
+      BizLand is chosen because he wanted it to be simple.
+  - category: vuejs
     title: Archdiocesan Nourishment Center
     url: https://www.ancdavao.com/
     photo: /uploads/antsdesignsstudio.png
