@@ -5,14 +5,21 @@ experiences:
   - position: Frontend Web Developer
     company: PetLab Co.
     started: June 2020
-    ended: June 2020
-    duration: 1 month
+    ended: Present
+    duration: ""
     description: |-
       * Funnel site lead developer using GatsbyJs and Builder.io
       * Optimize funnel site
       * Upsell site developer using VueJs
       * Manage presell pages using pure PHP
       * Review of other dev's code
+  - position: Wordpress Developer (Vue.js)
+    company: Journey To Legacy
+    started: August 2020
+    ended: October 2021
+    duration: 1+ Years
+    description: "* Developed a web app for managing user's journals using Vue.js
+      and Wordpress"
   - position: Accountant
     company: Archdiocesan Nourishment Center
     started: July 2018
@@ -24,3 +31,30 @@ experiences:
       * Employee's payroll
       * Prepares check vouchers
       * Bank Deposits and Reconciliation
+  - position: Accountant
+    company: Archdiocese of Davao - Bishop's Residence
+    started: September 2015
+    ended: July 2018
+    duration: 2+ years
+    description: >-
+      * Manage the financial records using Quickbooks Accounting System
+
+      * Employee's payroll
+
+      * Handles petty cash fund
+
+      * Checks parish remittances
+
+      * Checks financial records of newly donated school - San Lorenzo College of Davao, Inc.
+
+      * Prepares financial reports
+  - position: Manager / Owner
+    company: Alchie Internet Cafe
+    started: November 2009
+    ended: September 2015
+    description: |-
+      * Assists customers
+      * Repairs computers
+      * Setup new computers
+      * Manage financial records
+      * Comply annual business requirements
