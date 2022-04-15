@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "develop": "gatsby develop",
-    "start": "concurrently \"gatsby clean && gatsby develop\" \"npx netlify-cms-proxy-server\"",
+    "start": "concurrently \"gatsby clean && gatsby develop -o\" \"npx netlify-cms-proxy-server\"",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",

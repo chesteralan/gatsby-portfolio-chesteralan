@@ -1,6 +1,6 @@
 section_title: Technologies
 title: Services
-enabled: true
+enabled: false
 description: "These are the technologies I have learned over the years. "
 services:
   - title: Launch Quickly

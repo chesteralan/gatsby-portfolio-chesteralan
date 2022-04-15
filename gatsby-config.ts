@@ -32,7 +32,6 @@ const config: GatsbyConfig = {
         name: "images",
         path: `./src/images/`,
       },
-      __key: "images",
     },
     `gatsby-transformer-remark`,
     `gatsby-transformer-yaml`,

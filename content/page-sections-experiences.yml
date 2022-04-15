@@ -7,10 +7,20 @@ experiences:
     started: June 2020
     ended: June 2020
     duration: 1 month
-    description: test
+    description: |-
+      * Funnel site lead developer using GatsbyJs and Builder.io
+      * Optimize funnel site
+      * Upsell site developer using VueJs
+      * Manage presell pages using pure PHP
+      * Review of other dev's code
   - position: Accountant
     company: Archdiocesan Nourishment Center
     started: July 2018
     ended: July 2020
     duration: 2 years
-    description: Bookkeeper
+    description: |-
+      * Manage the financial records using Quickbooks Accounting System
+      * Bookkeeping
+      * Employee's payroll
+      * Prepares check vouchers
+      * Bank Deposits and Reconciliation
