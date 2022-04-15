@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  repo: https://github.com/chesteralan/gatsby-portfolio-chesteralan.git
   branch: new-content # Branch to update (optional; defaults to master)
 
 local_backend: true
