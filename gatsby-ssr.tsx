@@ -3,7 +3,6 @@ import type { GatsbySSR } from "gatsby";
 export const wrapPageElement: GatsbySSR["wrapPageElement"] = ({ element }) => {
   return (
     <div>
-      <h1>Hello World</h1>
       {element}
     </div>
   );
@@ -124,7 +123,7 @@ const FooterComponents = [
 export const onRenderBody: GatsbySSR["onRenderBody"] = ({
   setHeadComponents,
   setHtmlAttributes,
-  setPostBodyComponents,
+  // setPostBodyComponents,
 }) => {
   setHtmlAttributes(HtmlAttributes);
   setHeadComponents(HeadComponents);
